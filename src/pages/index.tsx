@@ -1,5 +1,5 @@
 function Home() {
-  return <div>ようこ0そ。</div>
+  return <div>ようこそ。</div>
 }
 
 export default Home
