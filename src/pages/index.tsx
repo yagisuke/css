@@ -1,5 +1,5 @@
-function Home() {
-  return <div>ようこそ。</div>
-}
+import { NextPage } from 'next'
+import Hello from '~/components/hello'
 
-export default Home
+const Page: NextPage = () => <Hello />
+export default Page
