@@ -8,7 +8,6 @@
     "prettier/@typescript-eslint"
   ],
   "plugins": [
-    "@typescript-eslint",
     "react"
   ],
   "parser": "@typescript-eslint/parser",
@@ -23,12 +22,19 @@
       "jsx": true
     }
   },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   "rules": {
     "react/prop-types": "off",
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
     "prettier/prettier": [
       "error", {
+        "printWidth": 100,
         "singleQuote": true,
         "semi": false 
       }
