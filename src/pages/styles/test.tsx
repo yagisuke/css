@@ -1,7 +1,5 @@
 import { Component } from 'react'
-import Link from 'next/link'
 import Head from '~/components/head'
-import Hello from '~/components/hello'
 
 type Props = {
   title: string
@@ -19,11 +17,6 @@ class Page extends Component<Props> {
     return (
       <div>
         <Head title={this.props.title} description={this.props.description} />
-        <Link href="/styles/test">
-          <a>
-            <Hello />
-          </a>
-        </Link>
       </div>
     )
   }
