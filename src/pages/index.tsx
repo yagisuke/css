@@ -1,7 +1,6 @@
 import { Component } from 'react'
-import Link from 'next/link'
 import Head from '~/components/head'
-import Hello from '~/components/hello'
+import StyleList from '~/components/style-list'
 
 type Props = {
   className?: string
@@ -20,11 +19,7 @@ class Page extends Component<Props> {
     return (
       <div className={this.props.className}>
         <Head title={this.props.title} description={this.props.description} />
-        <Link href="/styles/test" prefetch={false}>
-          <a>
-            <Hello />
-          </a>
-        </Link>
+        <StyleList />
       </div>
     )
   }
