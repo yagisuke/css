@@ -8,6 +8,7 @@
     "prettier/@typescript-eslint"
   ],
   "plugins": [
+    "@typescript-eslint",
     "react"
   ],
   "parser": "@typescript-eslint/parser",
