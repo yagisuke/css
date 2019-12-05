@@ -6,6 +6,7 @@ class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
     const sheet = new ServerStyleSheet()
     const originalRengerPage = ctx.renderPage
+
     ctx.renderPage = () =>
       originalRengerPage({
         enhanceApp: (App: any) => (props: any) => sheet.collectStyles(<App {...props} />)
@@ -13,7 +14,12 @@ class MyDocument extends Document {
     const initialProps = await Document.getInitialProps(ctx)
     return {
       ...initialProps,
-      styles: [...(initialProps.styles as any), ...sheet.getStyleElement()]
+      styles: (
+        <>
+          {initialProps.styles}
+          {sheet.getStyleElement()}
+        </>
+      )
     }
   }
 

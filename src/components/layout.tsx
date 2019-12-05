@@ -4,8 +4,7 @@ import { Html, Head, Main, NextScript } from 'next/document'
 const Layout: NextComponentType = () => (
   <Html lang="ja">
     <Head>
-      <title>CSS</title>
-      <meta name="description" content="CSS" />
+      <link rel="stylesheet" href="https://unpkg.com/marx-css/css/marx.min.css" />
     </Head>
     <body>
       <Main />

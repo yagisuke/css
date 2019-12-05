@@ -10,7 +10,7 @@ class HeadTemplate extends React.Component<Props> {
   render() {
     return (
       <Head>
-        <title>CSS | {this.props.title}</title>
+        <title>CSS{this.props.title && ` | ${this.props.title}`}</title>
         <meta name="description" content={this.props.description} />
       </Head>
     )
