@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import Head from '~/components/head'
-import StyleList from '~/components/style-list'
+import CSSMenu from '~/components/views/index/css-menu'
 
 type Props = {
   className?: string
@@ -19,7 +19,7 @@ class Page extends Component<Props> {
     return (
       <div className={this.props.className}>
         <Head title={this.props.title} description={this.props.description} />
-        <StyleList />
+        <CSSMenu />
       </div>
     )
   }
