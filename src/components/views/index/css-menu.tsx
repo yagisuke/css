@@ -10,8 +10,8 @@ class CSSMenu extends React.Component<Props> {
     return (
       <ul className={this.props.className}>
         <li>
-          <Link href="/styles/horizontal_snap/" prefetch={false}>
-            <a>Horizontal Snap</a>
+          <Link href="/styles/scroll_snap/" prefetch={false}>
+            <a>Scroll Snap</a>
           </Link>
         </li>
       </ul>
