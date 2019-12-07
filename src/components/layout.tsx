@@ -5,7 +5,7 @@ import { Html, Head, Main, NextScript } from 'next/document'
 const Layout: NextComponentType = () => (
   <Html lang="ja">
     <Head>
-      <link rel="stylesheet" href="https://cdn.rawgit.com/kimeiga/bahunya/css/bahunya-0.1.3.css" />
+      <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" type="text/css" />
     </Head>
     <body>
       <h1>
