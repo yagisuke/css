@@ -5,41 +5,37 @@ type Props = {
   className?: string
 }
 
-class CSSMenu extends React.Component<Props> {
-  render() {
-    return (
-      <div className={this.props.className}>
-        <img src="/styles/yagi_type1.png" alt="yagi_type1" width="200" height="200" />
-        <img src="/styles/yagi_type2.png" alt="yagi_type1" width="200" height="200" />
-        <img src="/styles/yagi_type3.png" alt="yagi_type1" width="200" height="200" />
-        <img src="/styles/yagi_type1.png" alt="yagi_type1" width="200" height="200" />
-        <img src="/styles/yagi_type2.png" alt="yagi_type1" width="200" height="200" />
-        <img src="/styles/yagi_type1.png" alt="yagi_type1" width="200" height="200" />
-        <img src="/styles/yagi_type2.png" alt="yagi_type1" width="200" height="200" />
-        <img src="/styles/yagi_type3.png" alt="yagi_type1" width="200" height="200" />
-        <img src="/styles/yagi_type1.png" alt="yagi_type1" width="200" height="200" />
-        <img src="/styles/yagi_type2.png" alt="yagi_type1" width="200" height="200" />
-        <img src="/styles/yagi_type1.png" alt="yagi_type1" width="200" height="200" />
-        <img src="/styles/yagi_type2.png" alt="yagi_type1" width="200" height="200" />
-        <img src="/styles/yagi_type3.png" alt="yagi_type1" width="200" height="200" />
-        <img src="/styles/yagi_type1.png" alt="yagi_type1" width="200" height="200" />
-        <img src="/styles/yagi_type2.png" alt="yagi_type1" width="200" height="200" />
-        <img src="/styles/yagi_type1.png" alt="yagi_type1" width="200" height="200" />
-        <img src="/styles/yagi_type2.png" alt="yagi_type1" width="200" height="200" />
-        <img src="/styles/yagi_type3.png" alt="yagi_type1" width="200" height="200" />
-        <img src="/styles/yagi_type1.png" alt="yagi_type1" width="200" height="200" />
-        <img src="/styles/yagi_type2.png" alt="yagi_type1" width="200" height="200" />
-        <img src="/styles/yagi_type1.png" alt="yagi_type1" width="200" height="200" />
-        <img src="/styles/yagi_type2.png" alt="yagi_type1" width="200" height="200" />
-        <img src="/styles/yagi_type3.png" alt="yagi_type1" width="200" height="200" />
-        <img src="/styles/yagi_type1.png" alt="yagi_type1" width="200" height="200" />
-        <img src="/styles/yagi_type2.png" alt="yagi_type1" width="200" height="200" />
-      </div>
-    )
-  }
-}
+const View: React.FC<Props> = props => (
+  <div className={props.className}>
+    <img src="/styles/yagi_type1.png" alt="yagi_type1" width="200" height="200" />
+    <img src="/styles/yagi_type2.png" alt="yagi_type1" width="200" height="200" />
+    <img src="/styles/yagi_type3.png" alt="yagi_type1" width="200" height="200" />
+    <img src="/styles/yagi_type1.png" alt="yagi_type1" width="200" height="200" />
+    <img src="/styles/yagi_type2.png" alt="yagi_type1" width="200" height="200" />
+    <img src="/styles/yagi_type1.png" alt="yagi_type1" width="200" height="200" />
+    <img src="/styles/yagi_type2.png" alt="yagi_type1" width="200" height="200" />
+    <img src="/styles/yagi_type3.png" alt="yagi_type1" width="200" height="200" />
+    <img src="/styles/yagi_type1.png" alt="yagi_type1" width="200" height="200" />
+    <img src="/styles/yagi_type2.png" alt="yagi_type1" width="200" height="200" />
+    <img src="/styles/yagi_type1.png" alt="yagi_type1" width="200" height="200" />
+    <img src="/styles/yagi_type2.png" alt="yagi_type1" width="200" height="200" />
+    <img src="/styles/yagi_type3.png" alt="yagi_type1" width="200" height="200" />
+    <img src="/styles/yagi_type1.png" alt="yagi_type1" width="200" height="200" />
+    <img src="/styles/yagi_type2.png" alt="yagi_type1" width="200" height="200" />
+    <img src="/styles/yagi_type1.png" alt="yagi_type1" width="200" height="200" />
+    <img src="/styles/yagi_type2.png" alt="yagi_type1" width="200" height="200" />
+    <img src="/styles/yagi_type3.png" alt="yagi_type1" width="200" height="200" />
+    <img src="/styles/yagi_type1.png" alt="yagi_type1" width="200" height="200" />
+    <img src="/styles/yagi_type2.png" alt="yagi_type1" width="200" height="200" />
+    <img src="/styles/yagi_type1.png" alt="yagi_type1" width="200" height="200" />
+    <img src="/styles/yagi_type2.png" alt="yagi_type1" width="200" height="200" />
+    <img src="/styles/yagi_type3.png" alt="yagi_type1" width="200" height="200" />
+    <img src="/styles/yagi_type1.png" alt="yagi_type1" width="200" height="200" />
+    <img src="/styles/yagi_type2.png" alt="yagi_type1" width="200" height="200" />
+  </div>
+)
 
-export default styled(CSSMenu)`
+export default styled(View)`
   display: grid;
   grid-template-columns: repeat(5, 200px);
   grid-template-rows: repeat(5, 200px);

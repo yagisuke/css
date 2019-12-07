@@ -11,7 +11,8 @@ module.exports = {
   exportPathMap: async () => {
     return {
       '/': { page: '/' },
-      '/styles/scroll_snap': { page: '/styles/scroll_snap' }
+      '/styles/scroll_snap': { page: '/styles/scroll_snap' },
+      '/styles/focus_within': { page: '/styles/focus_within' }
     }
   }
 }

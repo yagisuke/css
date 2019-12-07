@@ -3,7 +3,6 @@ import Head from '~/components/head'
 import { Sample1, Sample2, Sample3 } from '~/components/views/styles/scroll_snap'
 
 type Props = {
-  className?: string
   title: string
   description: string
 }
@@ -11,13 +10,13 @@ type Props = {
 class Page extends Component<Props> {
   static async getInitialProps(): Promise<Props> {
     return {
-      title: 'style',
-      description: 'style'
+      title: 'Scroll Snap',
+      description: 'Scroll Snap Examples.'
     }
   }
   render() {
     return (
-      <div className={this.props.className}>
+      <>
         <Head title={this.props.title} description={this.props.description} />
         Horizontal Snap
         <Sample1 />
@@ -25,7 +24,7 @@ class Page extends Component<Props> {
         <Sample2 />
         Matrix Snap
         <Sample3 />
-      </div>
+      </>
     )
   }
 }
