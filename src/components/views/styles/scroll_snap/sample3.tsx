@@ -8,30 +8,30 @@ type Props = {
 const View: React.FC<Props> = props => (
   <div className={props.className}>
     <img src="/styles/yagi_type1.png" alt="yagi_type1" width="200" height="200" />
-    <img src="/styles/yagi_type2.png" alt="yagi_type1" width="200" height="200" />
-    <img src="/styles/yagi_type3.png" alt="yagi_type1" width="200" height="200" />
+    <img src="/styles/yagi_v_type2.png" alt="yagi_v_type2" width="200" height="200" />
+    <img src="/styles/yagi_type3.png" alt="yagi_type3" width="200" height="200" />
+    <img src="/styles/yagi_v_type1.png" alt="yagi_v_type1" width="200" height="200" />
+    <img src="/styles/yagi_type2.png" alt="yagi_type2" width="200" height="200" />
+    <img src="/styles/yagi_v_type3.png" alt="yagi_v_type3" width="200" height="200" />
     <img src="/styles/yagi_type1.png" alt="yagi_type1" width="200" height="200" />
-    <img src="/styles/yagi_type2.png" alt="yagi_type1" width="200" height="200" />
+    <img src="/styles/yagi_v_type2.png" alt="yagi_v_type2" width="200" height="200" />
+    <img src="/styles/yagi_type3.png" alt="yagi_type3" width="200" height="200" />
+    <img src="/styles/yagi_v_type1.png" alt="yagi_v_type1" width="200" height="200" />
+    <img src="/styles/yagi_type2.png" alt="yagi_type2" width="200" height="200" />
+    <img src="/styles/yagi_v_type3.png" alt="yagi_v_type3" width="200" height="200" />
     <img src="/styles/yagi_type1.png" alt="yagi_type1" width="200" height="200" />
-    <img src="/styles/yagi_type2.png" alt="yagi_type1" width="200" height="200" />
-    <img src="/styles/yagi_type3.png" alt="yagi_type1" width="200" height="200" />
+    <img src="/styles/yagi_v_type2.png" alt="yagi_v_type2" width="200" height="200" />
+    <img src="/styles/yagi_type3.png" alt="yagi_type3" width="200" height="200" />
+    <img src="/styles/yagi_v_type1.png" alt="yagi_v_type1" width="200" height="200" />
+    <img src="/styles/yagi_type2.png" alt="yagi_type2" width="200" height="200" />
+    <img src="/styles/yagi_v_type3.png" alt="yagi_v_type3" width="200" height="200" />
     <img src="/styles/yagi_type1.png" alt="yagi_type1" width="200" height="200" />
-    <img src="/styles/yagi_type2.png" alt="yagi_type1" width="200" height="200" />
+    <img src="/styles/yagi_v_type2.png" alt="yagi_v_type2" width="200" height="200" />
+    <img src="/styles/yagi_type3.png" alt="yagi_type3" width="200" height="200" />
+    <img src="/styles/yagi_v_type1.png" alt="yagi_v_type1" width="200" height="200" />
+    <img src="/styles/yagi_type2.png" alt="yagi_type2" width="200" height="200" />
+    <img src="/styles/yagi_v_type3.png" alt="yagi_v_type3" width="200" height="200" />
     <img src="/styles/yagi_type1.png" alt="yagi_type1" width="200" height="200" />
-    <img src="/styles/yagi_type2.png" alt="yagi_type1" width="200" height="200" />
-    <img src="/styles/yagi_type3.png" alt="yagi_type1" width="200" height="200" />
-    <img src="/styles/yagi_type1.png" alt="yagi_type1" width="200" height="200" />
-    <img src="/styles/yagi_type2.png" alt="yagi_type1" width="200" height="200" />
-    <img src="/styles/yagi_type1.png" alt="yagi_type1" width="200" height="200" />
-    <img src="/styles/yagi_type2.png" alt="yagi_type1" width="200" height="200" />
-    <img src="/styles/yagi_type3.png" alt="yagi_type1" width="200" height="200" />
-    <img src="/styles/yagi_type1.png" alt="yagi_type1" width="200" height="200" />
-    <img src="/styles/yagi_type2.png" alt="yagi_type1" width="200" height="200" />
-    <img src="/styles/yagi_type1.png" alt="yagi_type1" width="200" height="200" />
-    <img src="/styles/yagi_type2.png" alt="yagi_type1" width="200" height="200" />
-    <img src="/styles/yagi_type3.png" alt="yagi_type1" width="200" height="200" />
-    <img src="/styles/yagi_type1.png" alt="yagi_type1" width="200" height="200" />
-    <img src="/styles/yagi_type2.png" alt="yagi_type1" width="200" height="200" />
   </div>
 )
 

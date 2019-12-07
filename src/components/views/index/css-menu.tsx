@@ -17,6 +17,16 @@ const View: React.FC<Props> = props => (
         <a>:focus-within</a>
       </Link>
     </li>
+    <li>
+      <Link href="/styles/media_prefers/" prefetch={false}>
+        <a>@media(prefers-*)</a>
+      </Link>
+    </li>
+    <li>
+      <Link href="/styles/is/" prefetch={false}>
+        <a>:is()</a>
+      </Link>
+    </li>
   </ul>
 )
 

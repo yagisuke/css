@@ -18,16 +18,37 @@ class Page extends Component<Props> {
     return (
       <>
         <Head title={this.props.title} description={this.props.description} />
-        Horizontal Snap
+        <h1>Scroll Snap</h1>
+        <h2>Horizontal Snap</h2>
         <Sample1 />
-        Vertical Snap
+        <h2>Vertical Snap</h2>
         <Sample2 />
-        Matrix Snap
+        <h2>Matrix Snap</h2>
         <Sample3 />
+        <h2>Reference</h2>
+        <ul>
+          <li>
+            <a
+              href="https://developer.mozilla.org/ja/docs/Web/CSS/scroll-snap-type"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              https://developer.mozilla.org/ja/docs/Web/CSS/scroll-snap-type
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://coliss.com/articles/build-websites/operation/css/how-to-use-css-scroll-snap.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              https://coliss.com/articles/build-websites/operation/css/how-to-use-css-scroll-snap.html
+            </a>
+          </li>
+        </ul>
       </>
     )
   }
 }
 
-/* Awwww scroll-snap */
 export default Page

@@ -26,6 +26,6 @@ export default styled(View)`
   img {
     display: block;
     margin: 0 auto;
-    scroll-snap-align: center;
+    scroll-snap-align: end;
   }
 `
