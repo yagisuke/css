@@ -11,7 +11,7 @@ class Page extends Component<Props> {
   static async getInitialProps(): Promise<Props> {
     return {
       title: '',
-      description: 'style'
+      description: '$ ls CSS'
     }
   }
   render() {

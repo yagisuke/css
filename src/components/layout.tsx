@@ -9,22 +9,19 @@ const Layout: NextComponentType = () => (
       <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" type="text/css" />
       <style>
         {`
-        body { word-break: break-word; }
+        body {
+          word-break: break-word;
+        }
 
         :root {
           --theme-font: #0f0f0f;
           --theme-background: #ffffff;
         }
+
         @media (prefers-color-scheme: dark) {
           :root {
           --theme-font: #ffffff;
           --theme-background: #0f0f0f;
-        }
-      
-        :is(h1),
-        :matches(h1),
-        :webkit-any(h1) {
-          color: red;
         }
       `}
       </style>

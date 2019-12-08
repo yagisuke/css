@@ -1,7 +1,7 @@
 {
   "name": "css",
   "version": "1.0.0",
-  "description": "css",
+  "description": "$ ls CSS",
   "main": "index.js",
   "scripts": {
     "dev": "next",
