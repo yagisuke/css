@@ -9,10 +9,6 @@ const Layout: NextComponentType = () => (
       <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" type="text/css" />
       <style>
         {`
-        body {
-          word-break: break-word;
-        }
-
         :root {
           --theme-font: #0f0f0f;
           --theme-background: #ffffff;
@@ -23,6 +19,10 @@ const Layout: NextComponentType = () => (
             --theme-font: #ffffff;
             --theme-background: #0f0f0f;
           }
+        }
+
+        body {
+          word-break: break-word;
         }
       `}
       </style>

@@ -18,8 +18,13 @@ const View: React.FC<Props> = props => (
       </Link>
     </li>
     <li>
-      <Link href="/styles/media_prefers/" prefetch={false}>
-        <a>@media(prefers-*)</a>
+      <Link href="/styles/prefers_reduced_motion/" prefetch={false}>
+        <a>@media (prefers_reduced_motion)</a>
+      </Link>
+    </li>
+    <li>
+      <Link href="/styles/prefers_color_scheme/" prefetch={false}>
+        <a>@media (prefers_color_scheme)</a>
       </Link>
     </li>
     <li>

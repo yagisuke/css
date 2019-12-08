@@ -13,7 +13,8 @@ module.exports = {
       '/': { page: '/' },
       '/styles/scroll_snap': { page: '/styles/scroll_snap' },
       '/styles/focus_within': { page: '/styles/focus_within' },
-      '/styles/media_prefers': { page: '/styles/media_prefers' },
+      '/styles/prefers_reduced_motion': { page: '/styles/prefers_reduced_motion' },
+      '/styles/prefers_color_scheme': { page: '/styles/prefers_color_scheme' },
       '/styles/is': { page: '/styles/is' }
     }
   }
