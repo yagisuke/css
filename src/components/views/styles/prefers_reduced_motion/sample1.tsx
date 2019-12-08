@@ -25,25 +25,27 @@ export default styled(View)`
 
   .motion {
     position: absolute;
+    top: 0;
     right: 0;
-    bottom: 0;
     left: 0;
     display: flex;
     justify-content: space-around;
     animation: MoveUpDown 1s linear infinite;
 
     @media (prefers-reduced-motion: reduce) {
-      animation: MoveUpDown 10s linear infinite;
+      animation: none;
+      top: 50%;
+      transform: translateY(-50%);
     }
   }
 
   @keyframes MoveUpDown {
     0%,
     100% {
-      bottom: 0;
+      top: 0;
     }
     50% {
-      bottom: 250px;
+      top: 250px;
     }
   }
 `

@@ -11,7 +11,7 @@ class Page extends Component<Props> {
   static async getInitialProps(): Promise<Props> {
     return {
       title: 'Scroll Snap',
-      description: 'Scroll Snap Examples.'
+      description: 'Scroll Snap Sample.'
     }
   }
   render() {
