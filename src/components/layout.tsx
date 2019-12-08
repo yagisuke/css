@@ -20,8 +20,9 @@ const Layout: NextComponentType = () => (
 
         @media (prefers-color-scheme: dark) {
           :root {
-          --theme-font: #ffffff;
-          --theme-background: #0f0f0f;
+            --theme-font: #ffffff;
+            --theme-background: #0f0f0f;
+          }
         }
       `}
       </style>
