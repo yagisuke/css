@@ -42,6 +42,7 @@ export default styled(View)`
   height: 600px;
   overflow: auto;
   border: 1px solid #ddd;
+  overscroll-behavior: contain contain;
   scroll-snap-type: both mandatory;
 
   img {
