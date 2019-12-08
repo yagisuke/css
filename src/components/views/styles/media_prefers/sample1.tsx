@@ -8,11 +8,11 @@ type Props = {
 const View: React.FC<Props> = props => (
   <div className={props.className}>
     <div className="motion">
-      <span className="ball" />
-      <span className="ball" />
-      <span className="ball" />
-      <span className="ball" />
-      <span className="ball" />
+      <img src="/styles/yagi_v_type1.png" alt="yagi_v_type1" width="50" height="50" />
+      <img src="/styles/yagi_v_type2.png" alt="yagi_v_type2" width="50" height="50" />
+      <img src="/styles/yagi_v_type3.png" alt="yagi_v_type3" width="50" height="50" />
+      <img src="/styles/yagi_v_type2.png" alt="yagi_v_type2" width="50" height="50" />
+      <img src="/styles/yagi_v_type1.png" alt="yagi_v_type1" width="50" height="50" />
     </div>
   </div>
 )
@@ -20,15 +20,15 @@ const View: React.FC<Props> = props => (
 export default styled(View)`
   position: relative;
   height: 300px;
-  background-color: #ddd;
+  border: 1px solid #ddd;
   overflow: hidden;
 
   .motion {
     position: absolute;
-    left: 0;
+    right: 0;
     bottom: 0;
+    left: 0;
     display: flex;
-    width: 100%;
     justify-content: space-around;
     animation: MoveUpDown 1s linear infinite;
 
@@ -45,13 +45,5 @@ export default styled(View)`
     50% {
       bottom: 250px;
     }
-  }
-
-  .ball {
-    width: 50px;
-    height: 50px;
-    background-color: #fff;
-    border-radius: 50%;
-    opacity: 0.5;
   }
 `
