@@ -6,15 +6,11 @@ type Props = {
   description: string
 }
 
-class HeadTemplate extends React.Component<Props> {
-  render() {
-    return (
-      <Head>
-        <title>CSS{this.props.title && ` | ${this.props.title}`}</title>
-        <meta name="description" content={this.props.description} />
-      </Head>
-    )
-  }
-}
+const View: React.FC<Props> = props => (
+  <Head>
+    <title>$ ls CSS{props.title && ` | ${props.title}`}</title>
+    <meta name="description" content={props.description} />
+  </Head>
+)
 
-export default HeadTemplate
+export default View

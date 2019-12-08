@@ -3,7 +3,6 @@ import Head from '~/components/head'
 import { Sample1, Sample2, Sample3 } from '~/components/views/styles/scroll_snap'
 
 type Props = {
-  className?: string
   title: string
   description: string
 }
@@ -11,24 +10,45 @@ type Props = {
 class Page extends Component<Props> {
   static async getInitialProps(): Promise<Props> {
     return {
-      title: 'style',
-      description: 'style'
+      title: 'Scroll Snap',
+      description: 'Scroll Snap Examples.'
     }
   }
   render() {
     return (
-      <div className={this.props.className}>
+      <>
         <Head title={this.props.title} description={this.props.description} />
-        Horizontal Snap
+        <h1>Scroll Snap</h1>
+        <h2>Horizontal Snap</h2>
         <Sample1 />
-        Vertical Snap
+        <h2>Vertical Snap</h2>
         <Sample2 />
-        Matrix Snap
+        <h2>Matrix Snap</h2>
         <Sample3 />
-      </div>
+        <h2>Reference</h2>
+        <ul>
+          <li>
+            <a
+              href="https://developer.mozilla.org/ja/docs/Web/CSS/scroll-snap-type"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              https://developer.mozilla.org/ja/docs/Web/CSS/scroll-snap-type
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://coliss.com/articles/build-websites/operation/css/how-to-use-css-scroll-snap.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              https://coliss.com/articles/build-websites/operation/css/how-to-use-css-scroll-snap.html
+            </a>
+          </li>
+        </ul>
+      </>
     )
   }
 }
 
-/* Awwww scroll-snap */
 export default Page
