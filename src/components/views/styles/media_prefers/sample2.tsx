@@ -16,11 +16,12 @@ const View: React.FC<Props> = props => (
 )
 
 export default styled(View)`
-  height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  height: 300px;
   padding: 16px;
+  border: 1px solid #ddd;
   background-color: var(--theme-background);
   color: var(--theme-font);
 
