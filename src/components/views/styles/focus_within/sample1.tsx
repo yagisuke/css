@@ -43,4 +43,4 @@ export default styled(View)`
       transform: rotate(360deg);
     }
   }
-`;
+`
