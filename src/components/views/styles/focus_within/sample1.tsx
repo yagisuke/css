@@ -30,7 +30,7 @@ export default styled(View)`
 
   img {
     margin-right: 16px;
-    transition: all 0.5s;
+    transition: opacity 0.5s, transform 0.5s;
     opacity: 0.25;
   }
 
@@ -43,4 +43,4 @@ export default styled(View)`
       transform: rotate(360deg);
     }
   }
-`
+`;
