@@ -9,28 +9,24 @@ const View: React.FC<Props> = props => {
   const [text, setText] = useState('')
   return (
     <div className={props.className}>
-      <label>
-        <img src="/styles/yagi_v_type1.png" alt="yagi_v_type1" width="50" height="50" />
-        <input
-          type="text"
-          value={text}
-          placeholder="Please focus..."
-          onChange={e => setText(e.target.value)}
-          style={{ marginBottom: 0 }}
-        />
-      </label>
+      <img src="/styles/yagi_v_type1.png" alt="yagi_v_type1" width="50" height="50" />
+      <input
+        type="text"
+        value={text}
+        placeholder="Please focus..."
+        onChange={e => setText(e.target.value)}
+        style={{ marginBottom: 0, fontSize: '16px' }}
+      />
     </div>
   )
 }
 
 export default styled(View)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 40px;
   border: 1px solid #ddd;
-
-  label {
-    display: inline-flex;
-    align-items: center;
-  }
 
   img {
     margin-right: 16px;

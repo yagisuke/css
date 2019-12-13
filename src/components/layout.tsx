@@ -6,7 +6,7 @@ const Layout: NextComponentType = () => (
   <Html lang="ja">
     <Head>
       <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" type="text/css" />
-      <style jsx global>
+      <style>
         {`
           :root {
             --theme-font: #0f0f0f;
