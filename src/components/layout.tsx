@@ -30,6 +30,10 @@ const Layout: NextComponentType = () => (
             border-top: 1px solid #2c8898;
             text-align: right;
           }
+          footer a {
+            display: inline-block;
+            margin-left: 16px;
+          }
         `}
       </style>
     </Head>
@@ -43,8 +47,12 @@ const Layout: NextComponentType = () => (
       </header>
       <Main />
       <footer>
+        <span>&copy;2019 yagisuke</span>
         <a href="https://twitter.com/yagi_suke" target="_blank" rel="noopener noreferrer">
-          ©2019 yagisuke
+          Twitter
+        </a>
+        <a href="https://github.com/yagisuke/css" target="_blank" rel="noopener noreferrer">
+          GitHub
         </a>
       </footer>
       <NextScript />
