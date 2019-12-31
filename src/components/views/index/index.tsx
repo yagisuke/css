@@ -1,3 +1,3 @@
-import CssMenu from './css-menu'
+import CssMenu from './css_menu'
 
 export { CssMenu }

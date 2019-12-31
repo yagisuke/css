@@ -7,12 +7,12 @@ type Props = {
 
 const View: React.FC<Props> = props => (
   <div className={props.className}>
-    <img src="/styles/yagi_type1.png" alt="yagi_type1" width="300" height="300" />
-    <img src="/styles/yagi_type2.png" alt="yagi_type2" width="300" height="300" />
-    <img src="/styles/yagi_type3.png" alt="yagi_type3" width="300" height="300" />
-    <img src="/styles/yagi_type1.png" alt="yagi_type1" width="300" height="300" />
-    <img src="/styles/yagi_type2.png" alt="yagi_type2" width="300" height="300" />
-    <img src="/styles/yagi_type3.png" alt="yagi_type3" width="300" height="300" />
+    <img src="/images/yagi_type1.png" alt="yagi_type1" width="300" height="300" />
+    <img src="/images/yagi_type2.png" alt="yagi_type2" width="300" height="300" />
+    <img src="/images/yagi_type3.png" alt="yagi_type3" width="300" height="300" />
+    <img src="/images/yagi_type1.png" alt="yagi_type1" width="300" height="300" />
+    <img src="/images/yagi_type2.png" alt="yagi_type2" width="300" height="300" />
+    <img src="/images/yagi_type3.png" alt="yagi_type3" width="300" height="300" />
   </div>
 )
 
