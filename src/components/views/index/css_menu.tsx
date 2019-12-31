@@ -28,6 +28,11 @@ const View: React.FC<Props> = props => (
       </Link>
     </li>
     <li>
+      <Link href="/styles/backdrop_filter/" prefetch={false}>
+        <a>backdrop-filter</a>
+      </Link>
+    </li>
+    <li>
       <Link href="/styles/is/" prefetch={false}>
         <a>:is()</a>
       </Link>
