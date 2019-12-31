@@ -9,7 +9,7 @@ const View: React.FC<Props> = props => {
   const [text, setText] = useState('')
   return (
     <div className={props.className}>
-      <img src="/styles/yagi_v_type1.png" alt="yagi_v_type1" width="50" height="50" />
+      <img src="/images/yagi_v_type1.png" alt="yagi_v_type1" width="50" height="50" />
       <input
         type="text"
         value={text}

@@ -32,6 +32,11 @@ const View: React.FC<Props> = props => (
         <a>:is()</a>
       </Link>
     </li>
+    {/* <li>
+      <Link href="/styles/houdini_paint_api/" prefetch={false}>
+        <a>Paint API</a>
+      </Link>
+    </li> */}
   </ul>
 )
 

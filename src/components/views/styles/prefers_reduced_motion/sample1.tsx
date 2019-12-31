@@ -8,11 +8,11 @@ type Props = {
 const View: React.FC<Props> = props => (
   <div className={props.className}>
     <div className="motion">
-      <img src="/styles/yagi_v_type1.png" alt="yagi_v_type1" width="50" height="50" />
-      <img src="/styles/yagi_v_type2.png" alt="yagi_v_type2" width="50" height="50" />
-      <img src="/styles/yagi_v_type3.png" alt="yagi_v_type3" width="50" height="50" />
-      <img src="/styles/yagi_v_type2.png" alt="yagi_v_type2" width="50" height="50" />
-      <img src="/styles/yagi_v_type1.png" alt="yagi_v_type1" width="50" height="50" />
+      <img src="/images/yagi_v_type1.png" alt="yagi_v_type1" width="50" height="50" />
+      <img src="/images/yagi_v_type2.png" alt="yagi_v_type2" width="50" height="50" />
+      <img src="/images/yagi_v_type3.png" alt="yagi_v_type3" width="50" height="50" />
+      <img src="/images/yagi_v_type2.png" alt="yagi_v_type2" width="50" height="50" />
+      <img src="/images/yagi_v_type1.png" alt="yagi_v_type1" width="50" height="50" />
     </div>
   </div>
 )
