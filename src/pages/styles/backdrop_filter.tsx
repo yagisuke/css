@@ -27,6 +27,15 @@ class Page extends Component<Props> {
         <ul>
           <li>
             <a
+              href="https://developer.mozilla.org/ja/docs/Web/CSS/backdrop-filter"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              https://developer.mozilla.org/ja/docs/Web/CSS/backdrop-filter
+            </a>
+          </li>
+          <li>
+            <a
               href="https://css-tricks.com/almanac/properties/b/backdrop-filter/"
               target="_blank"
               rel="noopener noreferrer"
