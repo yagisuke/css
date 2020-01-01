@@ -30,18 +30,18 @@ export default styled(View)`
   .cover {
     position: absolute;
     top: 0;
-    text-align: left;
     bottom: 0;
     left: 0;
     right: 20%;
-    font-size: 20px;
-    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.5);
 
     .row {
-      height: calc(300px / 5);
       margin: 0;
-      padding: 8px 16px;
-      box-sizing: border-box;
+      padding: 0 16px;
+      text-align: left;
+      line-height: calc(300px / 5);
+      font-size: 20px;
+      font-weight: bold;
 
       &:nth-child(1) {
         backdrop-filter: none;

@@ -33,15 +33,15 @@ export default styled(View)`
     right: 0;
     bottom: 0;
     left: 20%;
-    text-align: right;
-    font-size: 20px;
-    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.5);
 
     .row {
-      height: calc(300px / 5);
       margin: 0;
-      padding: 8px 16px;
-      box-sizing: border-box;
+      padding: 0 16px;
+      text-align: right;
+      line-height: calc(300px / 5);
+      font-size: 20px;
+      font-weight: bold;
 
       &:nth-child(1) {
         backdrop-filter: invert(0.7);
