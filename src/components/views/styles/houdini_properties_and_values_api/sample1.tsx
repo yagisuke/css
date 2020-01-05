@@ -8,7 +8,7 @@ type Props = {
 const View: React.FC<Props> = props => (
   <>
     <div className={props.className}>Please hover...</div>
-    <script src="/scripts/houdini_properties_and_values_api/index.js" />
+    <script src="/scripts/houdini_properties_and_values_api/sample1.js" />
   </>
 )
 
