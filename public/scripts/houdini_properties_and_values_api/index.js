@@ -1,6 +1,6 @@
 CSS.registerProperty({
-	name: '--gradient-start',
-	syntax: '<color>',
-	initialValue: 'transparent',
-	inherits: false
+  name: '--gradient-start',
+  syntax: '<color>',
+  initialValue: 'transparent',
+  inherits: false
 });
