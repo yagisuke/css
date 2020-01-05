@@ -42,11 +42,18 @@ const View: React.FC<Props> = props => (
         <a>Properties &amp; Values API</a>
       </Link>
     </li>
-    {/* <li>
+    {/* 
+    <li>
+      <Link href="/styles/houdini_typed_om/" prefetch={false}>
+        <a>Typed OM</a>
+      </Link>
+    </li>
+    <li>
       <Link href="/styles/houdini_paint_api/" prefetch={false}>
         <a>Paint API</a>
       </Link>
-    </li> */}
+    </li>
+    */}
   </ul>
 )
 
