@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import Head from '~/components/head'
-import { Sample1, Sample2 } from '~/components/views/styles/backdrop_filter'
+import { Sample1, Sample2, Sample3 } from '~/components/views/styles/backdrop_filter'
 
 type Props = {
   title: string
@@ -23,6 +23,8 @@ class Page extends Component<Props> {
         <Sample1 />
         <br />
         <Sample2 />
+        <br />
+        <Sample3 />
         <h2>Reference</h2>
         <ul>
           <li>
