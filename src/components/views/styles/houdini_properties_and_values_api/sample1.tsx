@@ -7,8 +7,8 @@ type Props = {
 
 const View: React.FC<Props> = props => (
   <>
-    <div className={props.className}>Please hover...</div>
-    <script src="/scripts/houdini_properties_and_values_api/index.js" />
+    <div className={props.className}>invalid..</div>
+    <script src="/scripts/houdini_properties_and_values_api/sample1.js" />
   </>
 )
 
@@ -19,14 +19,6 @@ export default styled(View)`
   font-weight: bold;
   box-sizing: border-box;
 
-  --gradient-start: white;
-  --gradient-end: gray;
-  background: linear-gradient(var(--gradient-start), var(--gradient-end));
-  color: var(--gradient-end);
-  transition: --gradient-start 1.5s;
-
-  &:hover {
-    --gradient-start: gray;
-    --gradient-end: white;
-  }
+  --invalid-color: '404 Notfound.';
+  background-color: var(--invalid-color);
 `

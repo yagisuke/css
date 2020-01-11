@@ -16,4 +16,4 @@ class CirclePainter {
 }
 
 // paint(circle)として登録する
-registerPaint('circle', CirclePainter)
+registerPaint('circle', CirclePainter);

@@ -10,7 +10,7 @@ const View: React.FC<Props> = props => (
     <div className="target" />
     <script
       dangerouslySetInnerHTML={{
-        __html: `CSS.paintWorklet.addModule('/scripts/houdini_paint_api/paint.js')`
+        __html: `CSS.paintWorklet.addModule('/scripts/houdini_paint_api/sample1.js')`
       }}
     />
   </div>

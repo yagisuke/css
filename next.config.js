@@ -17,8 +17,9 @@ module.exports = {
       '/styles/prefers_color_scheme': { page: '/styles/prefers_color_scheme' },
       '/styles/backdrop_filter/': { page: '/styles/backdrop_filter' },
       '/styles/is': { page: '/styles/is' },
-      '/styles/houdini_paint_api': { page: '/styles/houdini_paint_api' },
-      '/styles/houdini_properties_and_values_api': { page: '/styles/houdini_properties_and_values_api' }
+      '/styles/houdini_properties_and_values_api': { page: '/styles/houdini_properties_and_values_api' },
+      '/styles/houdini_typed_om': { page: '/styles/houdini_typed_om' },
+      '/styles/houdini_paint_api': { page: '/styles/houdini_paint_api' }
     }
   }
 }

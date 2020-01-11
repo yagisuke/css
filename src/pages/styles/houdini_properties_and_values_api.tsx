@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import Head from '~/components/head'
-import { Sample1 } from '~/components/views/styles/houdini_properties_and_values_api'
+import { Sample1, Sample2 } from '~/components/views/styles/houdini_properties_and_values_api'
 
 type Props = {
   title: string
@@ -19,7 +19,10 @@ class Page extends Component<Props> {
       <>
         <Head title={this.props.title} description={this.props.description} />
         <h1>Properties &amp; Values API</h1>
+        <h2>invalid</h2>
         <Sample1 />
+        <h2>valid</h2>
+        <Sample2 />
       </>
     )
   }
