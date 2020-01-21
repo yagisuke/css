@@ -3,28 +3,72 @@ import styled from 'styled-components'
 
 type Props = {
   className?: string
+  value: string
 }
 
-const View: React.FC<Props> = props => (
-  <div className={props.className}>
-    <img src="/images/yagi_type1.png" alt="yagi_type1" width="300" height="300" />
-    <img src="/images/yagi_type2.png" alt="yagi_type2" width="300" height="300" />
-    <img src="/images/yagi_type3.png" alt="yagi_type3" width="300" height="300" />
-    <img src="/images/yagi_type1.png" alt="yagi_type1" width="300" height="300" />
-    <img src="/images/yagi_type2.png" alt="yagi_type2" width="300" height="300" />
-    <img src="/images/yagi_type3.png" alt="yagi_type3" width="300" height="300" />
-  </div>
-)
+const View: React.FC<Props> = props => {
+  const [sample1, updateSample1] = React.useState(props.value)
+  const handleChange = React.useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      updateSample1(e.target.value)
+    },
+    [sample1]
+  )
+
+  return (
+    <div className={props.className}>
+      <label>
+        text:
+        <input
+          type="text"
+          name="sample1"
+          placeholder="1989-02-09"
+          value={sample1}
+          onChange={handleChange}
+        />
+      </label>
+      <label>
+        number:
+        <input
+          type="number"
+          name="sample1"
+          placeholder="1989-02-09"
+          value={sample1}
+          onChange={handleChange}
+        />
+      </label>
+      <label>
+        date:
+        <input
+          type="date"
+          name="sample1"
+          placeholder="1989-02-09"
+          value={sample1}
+          onChange={handleChange}
+        />
+      </label>
+      <label>
+        tel:
+        <input
+          type="tel"
+          name="sample1"
+          placeholder="1989-02-09"
+          value={sample1}
+          onChange={handleChange}
+        />
+      </label>
+      <label>
+        value:
+        <p className="result">{sample1 || 'none'}</p>
+      </label>
+    </div>
+  )
+}
 
 export default styled(View)`
-  display: flex;
-  border: 1px solid #ddd;
-  height: 300px;
-  overflow-x: auto;
-  overscroll-behavior-x: contain;
-  scroll-snap-type: x mandatory;
-
-  img {
-    scroll-snap-align: center;
+  input {
+    display: block;
+    width: 300px;
+    height: 50px;
   }
 `

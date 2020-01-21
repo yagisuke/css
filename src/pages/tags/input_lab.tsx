@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import Head from '~/components/head'
-import { Sample1, Sample2 } from '~/components/views/styles/backdrop_filter'
+import { Sample1, Sample2 } from '~/components/views/tags/input_lab'
 
 type Props = {
   title: string
@@ -22,7 +22,6 @@ class Page extends Component<Props> {
         <h1>input</h1>
         <Sample1 value="" />
         <br />
-        <Sample2 />
       </>
     )
   }

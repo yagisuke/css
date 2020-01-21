@@ -3,72 +3,35 @@ import styled from 'styled-components'
 
 type Props = {
   className?: string
-  value: string
 }
 
-const View: React.FC<Props> = props => {
-  const [sample1, updateSample1] = React.useState(props.value)
-  const handleChange = React.useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      updateSample1(e.target.value)
-    },
-    [sample1]
-  )
-
-  return (
-    <div className={props.className}>
-      <label>
-        text:
-        <input
-          type="text"
-          name="sample1"
-          placeholder="1989-02-09"
-          value={sample1}
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        number:
-        <input
-          type="number"
-          name="sample1"
-          placeholder="1989-02-09"
-          value={sample1}
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        date:
-        <input
-          type="date"
-          name="sample1"
-          placeholder="1989-02-09"
-          value={sample1}
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        tel:
-        <input
-          type="tel"
-          name="sample1"
-          placeholder="1989-02-09"
-          value={sample1}
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        value:
-        <p className="result">{sample1 || 'none'}</p>
-      </label>
-    </div>
-  )
-}
+const View: React.FC<Props> = props => (
+  <figure className={props.className}>
+    <img src="/images/yagi_v_type1.png" alt="" width="300" height="300" />
+    <figcaption className="caption">This is a YAGI.</figcaption>
+  </figure>
+)
 
 export default styled(View)`
-  input {
-    display: block;
-    width: 300px;
-    height: 50px;
+  position: relative;
+  height: 300px;
+  margin: 0;
+  border: 1px solid #ddd;
+  background-color: yellowgreen;
+  text-align: center;
+
+  .caption {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    padding: 8px 16px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    backdrop-filter: blur(7px);
+    background-color: rgba(0, 0, 0, 0.4);
   }
 `
