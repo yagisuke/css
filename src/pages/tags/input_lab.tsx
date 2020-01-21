@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import Head from '~/components/head'
-import { Sample1, Sample2 } from '~/components/views/tags/input_lab'
+import { Sample1 } from '~/components/views/tags/input_lab'
 
 type Props = {
   title: string
