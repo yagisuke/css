@@ -18,7 +18,8 @@ module.exports = {
       '/styles/backdrop_filter/': { page: '/styles/backdrop_filter' },
       '/styles/is': { page: '/styles/is' },
       '/styles/houdini_paint_api': { page: '/styles/houdini_paint_api' },
-      '/styles/houdini_properties_and_values_api': { page: '/styles/houdini_properties_and_values_api' }
+      '/styles/houdini_properties_and_values_api': { page: '/styles/houdini_properties_and_values_api' },
+      '/tags/input_lab': { page: '/tags/input_lab' }
     }
   }
 }
