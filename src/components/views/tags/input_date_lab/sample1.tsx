@@ -9,7 +9,7 @@ type Props = {
 const View: React.FC<Props> = props => {
   const [date, updateDate] = useState(props.value)
 
-  const handleChange = useCallback((event: React.FocusEvent<HTMLInputElement>) => {
+  const handleChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
     updateDate(event.target.value)
   }, [])
 
