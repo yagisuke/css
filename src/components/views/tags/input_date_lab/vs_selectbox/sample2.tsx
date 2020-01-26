@@ -75,7 +75,7 @@ const View: React.FC<Props> = props => {
             </option>
           ))}
         </select>
-        <span className="mark">Year</span>
+        <span className="mark">y</span>
         <select name="month" value={date.month} onChange={handleChange}>
           <option value="">---</option>
           {months.map(month => (
@@ -84,7 +84,7 @@ const View: React.FC<Props> = props => {
             </option>
           ))}
         </select>
-        <span className="mark">Month</span>
+        <span className="mark">m</span>
         <select name="day" value={date.day} onChange={handleChange} onBlur={handleEnd}>
           <option value="">---</option>
           {days.map(day => (
@@ -93,7 +93,7 @@ const View: React.FC<Props> = props => {
             </option>
           ))}
         </select>
-        <span className="mark">Day</span>
+        <span className="mark">d</span>
       </div>
       <p>
         value:{' '}
