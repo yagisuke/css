@@ -8,10 +8,10 @@ type Props = {
 
 const View: React.FC<Props> = props => {
   const [date, updateDate] = React.useState({
-    date: props.value,
     text: props.value,
     number: props.value,
-    tel: props.value
+    tel: props.value,
+    date: props.value
   })
 
   const handleChange = useCallback(
@@ -89,6 +89,21 @@ const View: React.FC<Props> = props => {
             rel="noopener noreferrer"
           >
             {`<input type="tel"> - HTML: HyperText Markup Language | MDN`}
+          </a>
+        </li>
+      </ul>
+      <hr />
+      <label htmlFor="sample2-tel">input date</label>
+      <input id="sample2-date" type="date" name="date" value={date.date} onChange={handleChange} />
+      <p>value: {date.date || 'none'}</p>
+      <ul>
+        <li>
+          <a
+            href="https://developer.mozilla.org/ja/docs/Web/HTML/Element/Input/date"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {`<input type="date"> - HTML: HyperText Markup Language | MDN`}
           </a>
         </li>
       </ul>
