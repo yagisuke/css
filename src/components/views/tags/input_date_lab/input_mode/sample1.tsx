@@ -6,6 +6,6 @@ type Props = {
   value: string
 }
 
-const View: React.FC<Props> = props => <div className={props.className}>sample4</div>
+const View: React.FC<Props> = props => <div className={props.className}>hoge</div>
 
 export default styled(View)``
