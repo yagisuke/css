@@ -116,6 +116,7 @@ export default styled(View)`
     width: 100%;
     max-width: 300px;
     height: 50px;
+    font-size: 18px;
   }
   hr {
     margin-bottom: 24px;
