@@ -27,6 +27,10 @@ const DATE_OPTION: T_OPTION = {
 }
 
 const View: React.FC<Props> = props => {
+  const [time, setTime] = useState({
+    start: 0,
+    end: 0
+  })
   const [date, updateDate] = useState<T_DATE>(() => {
     const date = props.value.split('-')
     return {
@@ -73,6 +77,14 @@ const View: React.FC<Props> = props => {
     [date]
   )
 
+  const handleStart = useCallback(() => {
+    setTime({ ...time, start: new Date().getTime() })
+  }, [time])
+
+  const handleEnd = useCallback(() => {
+    setTime({ ...time, end: new Date().getTime() })
+  }, [time])
+
   return (
     <div className={props.className}>
       <div className="container">
@@ -86,6 +98,7 @@ const View: React.FC<Props> = props => {
           ref={DATE_OPTION.year.ref}
           onChange={handleChange}
           onKeyUp={handleKeyUp}
+          onFocus={handleStart}
         />
         <span className="mark">y</span>
         <input
@@ -109,10 +122,12 @@ const View: React.FC<Props> = props => {
           maxLength={DATE_OPTION.day.limit}
           ref={DATE_OPTION.day.ref}
           onChange={handleChange}
+          onBlur={handleEnd}
         />
         <span className="mark">d</span>
       </div>
       <p>value: {resultDate || 'none'}</p>
+      <p>time: {time.start && time.end ? Math.floor((time.end - time.start) / 1000) : ' --- '}秒</p>
     </div>
   )
 }
