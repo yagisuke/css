@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React, { useState, useCallback } from 'react'
 import styled from 'styled-components'
 
 type Props = {
@@ -7,8 +7,8 @@ type Props = {
 }
 
 const View: React.FC<Props> = props => {
-  const [date, updateDate] = React.useState(props.value)
-  const [time, setTime] = React.useState({
+  const [date, updateDate] = useState(props.value)
+  const [time, setTime] = useState({
     start: 0,
     end: 0
   })

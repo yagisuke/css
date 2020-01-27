@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import Head from '~/components/head'
-import { Sample1 } from '~/components/views/tags/input_date_lab/result'
+import { Sample1, Sample2, Sample3 } from '~/components/views/tags/input_date_lab/adjust_input_date'
 
 type Props = {
   title: string
@@ -10,8 +10,8 @@ type Props = {
 class Page extends Component<Props> {
   static async getInitialProps(): Promise<Props> {
     return {
-      title: 'input date lab - result - ',
-      description: 'input date lab - result - Sample.'
+      title: 'input date lab - Adjust Input Date - ',
+      description: 'input date lab - Adjust Input Date - Sample.'
     }
   }
 
@@ -20,7 +20,12 @@ class Page extends Component<Props> {
       <>
         <Head title={this.props.title} description={this.props.description} />
         <h1>{this.props.title}</h1>
+        <h2>Bugging on Safari</h2>
         <Sample1 value="" />
+        <h2>Bugging on Firefox</h2>
+        <Sample2 value="" />
+        <h2>Finish</h2>
+        <Sample3 value="" />
       </>
     )
   }

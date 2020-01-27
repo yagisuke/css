@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React, { useState, useCallback } from 'react'
 import styled from 'styled-components'
 
 type Props = {
@@ -7,7 +7,7 @@ type Props = {
 }
 
 const View: React.FC<Props> = props => {
-  const [date, updateDate] = React.useState(props.value)
+  const [date, updateDate] = useState(props.value)
 
   const handleChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
     updateDate(event.target.value)

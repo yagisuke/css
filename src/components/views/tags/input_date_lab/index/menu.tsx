@@ -23,8 +23,8 @@ const View: React.FC<Props> = props => (
       </Link>
     </li>
     <li>
-      <Link href="/tags/input_date_lab/result/" prefetch={false}>
-        <a>Result</a>
+      <Link href="/tags/input_date_lab/adjust_input_date/" prefetch={false}>
+        <a>Adjust Input Date</a>
       </Link>
     </li>
     <li>
