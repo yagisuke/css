@@ -47,7 +47,7 @@ const View: React.FC<Props> = props => {
   const handleChange = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
       const val = event.target.value.replace(/[^0-9０-９]/g, '')
-      const name = event.target.name || ''
+      const name = event.target.name
 
       console.log('value: ', val)
 

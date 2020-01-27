@@ -47,7 +47,7 @@ const View: React.FC<Props> = props => {
   const handleChange = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
       const val = event.target.value.replace(/[^0-9０-９]/g, '')
-      const name = event.target.name || ''
+      const name = event.target.name
 
       console.log('value: ', val)
 
@@ -55,9 +55,17 @@ const View: React.FC<Props> = props => {
       if (DATE_OPTION[name].limit < val.length) return
       // 正常系
       updateDate({ ...date, [name]: val })
-      // 自動タブ移動
+    },
+    [date]
+  )
+
+  const handleKeyUp = useCallback(
+    (e: React.KeyboardEvent<HTMLInputElement>) => {
+      const val = e.currentTarget.defaultValue
+      const name = e.currentTarget.name
       const complete = val.length === DATE_OPTION[name].limit
       const next = DATE_OPTION[name].next || ''
+      // 次の入力欄に移動
       if (complete && DATE_OPTION[next] && DATE_OPTION[next].ref.current) {
         DATE_OPTION[next].ref.current.focus()
       }
@@ -77,6 +85,7 @@ const View: React.FC<Props> = props => {
           maxLength={DATE_OPTION.year.limit}
           ref={DATE_OPTION.year.ref}
           onChange={handleChange}
+          onKeyUp={handleKeyUp}
         />
         <span className="mark">y</span>
         <input
@@ -88,6 +97,7 @@ const View: React.FC<Props> = props => {
           maxLength={DATE_OPTION.month.limit}
           ref={DATE_OPTION.month.ref}
           onChange={handleChange}
+          onKeyUp={handleKeyUp}
         />
         <span className="mark">m</span>
         <input
