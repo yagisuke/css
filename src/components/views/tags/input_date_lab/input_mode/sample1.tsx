@@ -93,7 +93,7 @@ const View: React.FC<Props> = props => {
         <input
           type="text"
           // @ts-ignore
-          inputMode="tel"
+          inputMode="numeric"
           name="month"
           placeholder="01"
           value={date.month}
@@ -105,7 +105,7 @@ const View: React.FC<Props> = props => {
         />
         <span className="mark">m</span>
         <input
-          type="text"
+          type="number"
           // @ts-ignore
           inputMode="tel"
           name="day"
