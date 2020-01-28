@@ -29,9 +29,9 @@ const View: React.FC<Props> = props => {
     <div className={props.className}>
       <input
         type="tel"
-        name="tel"
+        name="date"
         placeholder="1979/01/01"
-        pattern="[0-9０-９/]{10}"
+        pattern="[0-9０-９]{10}"
         value={date}
         onChange={handleChange}
         onFocus={handleStart}
