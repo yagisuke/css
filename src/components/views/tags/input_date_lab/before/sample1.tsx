@@ -31,6 +31,8 @@ const View: React.FC<Props> = props => {
         style={{ color: date ? 'inherit' : 'darkgray' }}
       />
       <p>value: {date || 'none'}</p>
+
+      <input pattern="\d+" name="hoge" value="0" placeholder="hoge" maxLength={7} />
     </div>
   )
 }
