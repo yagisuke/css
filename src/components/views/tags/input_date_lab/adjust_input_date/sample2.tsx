@@ -29,6 +29,7 @@ const DATE_OPTION = {
 
 const View: React.FC<Props> = props => {
   const [time, setTime] = useState({ start: 0, end: 0 })
+
   const [date, updateDate] = useState({ year: '', month: '', day: '' })
   const resultDate = useMemo((): string => {
     const invalid = Object.keys(DATE_OPTION).find(key => {
@@ -53,9 +54,9 @@ const View: React.FC<Props> = props => {
   )
 
   const handleKeyUp = useCallback(
-    (e: React.KeyboardEvent<HTMLInputElement>) => {
-      const val = e.currentTarget.defaultValue
-      const name = e.currentTarget.name
+    (event: React.KeyboardEvent<HTMLInputElement>) => {
+      const val = event.currentTarget.defaultValue
+      const name = event.currentTarget.name
       const complete = val.length === DATE_OPTION[name].limit
       const next = DATE_OPTION[name].next || ''
       // 次の入力欄に移動

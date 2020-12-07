@@ -23,6 +23,7 @@ const DATE_OPTION = {
 
 const View: React.FC<Props> = props => {
   const [time, setTime] = useState({ start: 0, end: 0 })
+
   const [date, updateDate] = useState({ year: '', month: '', day: '' })
   const resultDate = useMemo((): string => {
     const invalid = Object.keys(DATE_OPTION).find(key => {
