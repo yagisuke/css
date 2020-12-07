@@ -24,7 +24,8 @@ module.exports = {
       '/tags/input_date_lab/input_variation': { page: '/tags/input_date_lab/input_variation' },
       '/tags/input_date_lab/vs_selectbox': { page: '/tags/input_date_lab/vs_selectbox' },
       '/tags/input_date_lab/adjust_input_date': { page: '/tags/input_date_lab/adjust_input_date' },
-      '/tags/input_date_lab/input_mode': { page: '/tags/input_date_lab/input_mode' }
+      '/tags/input_date_lab/input_mode': { page: '/tags/input_date_lab/input_mode' },
+      '/tags/input_date_lab/input_mode_variation': { page: '/tags/input_date_lab/input_mode_variation' }
     }
   }
 }

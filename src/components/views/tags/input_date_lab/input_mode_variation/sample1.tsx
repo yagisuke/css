@@ -14,16 +14,16 @@ const View: React.FC<Props> = props => {
 
   return (
     <div className={props.className}>
-      <input type="date" name="date" value={date} onChange={handleChange} />
+      <input type="text" name="text" inputMode="text" value={date} onChange={handleChange} />
       <p>value: {date || 'none'}</p>
       <ul>
         <li>
           <a
-            href="https://developer.mozilla.org/ja/docs/Web/HTML/Element/Input/date"
+            href="https://html.spec.whatwg.org/multipage/interaction.html#attr-inputmode-keyword-text"
             target="_blank"
             rel="noopener noreferrer"
           >
-            {`<input type="date"> - HTML: HyperText Markup Language | MDN`}
+            {`HTML Standard - 6.7.7 Input modalities: the inputmode attribute | text`}
           </a>
         </li>
       </ul>

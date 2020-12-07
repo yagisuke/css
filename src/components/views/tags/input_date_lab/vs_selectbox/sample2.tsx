@@ -1,47 +1,23 @@
 import React, { useState, useCallback, useMemo } from 'react'
 import styled from 'styled-components'
 import getDaysInMonth from 'date-fns/getDaysInMonth'
+const MONTHS = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12']
 
 type Props = {
   className?: string
-  value: string
   minAge: number
   maxAge: number
 }
 
 const View: React.FC<Props> = props => {
-  const [date, updateDate] = useState(() => {
-    const value = props.value.split('-')
-    return {
-      year: value[0] || '',
-      month: value[1] || '',
-      day: value[2] || ''
-    }
-  })
-  const [time, setTime] = useState({
-    start: 0,
-    end: 0
-  })
+  const [time, setTime] = useState({ start: 0, end: 0 })
+  const [date, updateDate] = useState({ year: '', month: '', day: '' })
   const [years] = useState(() => {
     const currentYear = new Date().getFullYear()
     return [...Array(props.maxAge - props.minAge)].map(
       (_, i) => currentYear - props.minAge - (i + 1)
     )
   })
-  const [months] = useState([
-    '01',
-    '02',
-    '03',
-    '04',
-    '05',
-    '06',
-    '07',
-    '08',
-    '09',
-    '10',
-    '11',
-    '12'
-  ])
   const days = useMemo(() => {
     if (!date.year || !date.month) return []
     const last = getDaysInMonth(new Date(`${date.year}-${date.month}`))
@@ -78,7 +54,7 @@ const View: React.FC<Props> = props => {
         <span className="mark">y</span>
         <select name="month" value={date.month} onChange={handleChange}>
           <option value="">---</option>
-          {months.map(month => (
+          {MONTHS.map(month => (
             <option key={month} value={month}>
               {month}
             </option>

@@ -1,56 +1,50 @@
 import React, { useState, useCallback, useMemo, createRef } from 'react'
 import styled from 'styled-components'
 import { formatDate } from '~/utils/input_date_lab'
-import { T_OPTION, T_DATE } from '~/types/input_date_lab'
 
 type Props = {
   className?: string
   value: string
 }
 
-const DATE_OPTION: T_OPTION = {
+const DATE_OPTION = {
   year: {
     limit: 4,
+    pattern: '4',
     ref: createRef<HTMLInputElement>(),
     next: 'month'
   },
   month: {
     limit: 2,
+    pattern: '1,2',
     ref: createRef<HTMLInputElement>(),
     next: 'day'
   },
   day: {
     limit: 2,
+    pattern: '1,2',
     ref: createRef<HTMLInputElement>(),
     next: ''
   }
 }
 
 const View: React.FC<Props> = props => {
-  const [date, updateDate] = useState<T_DATE>(() => {
-    const date = props.value.split('-')
-    return {
-      year: date[0] || '',
-      month: date[1] || '',
-      day: date[2] || ''
-    }
-  })
-
+  const [time, setTime] = useState({ start: 0, end: 0 })
+  const [date, updateDate] = useState({ year: '', month: '', day: '' })
   const resultDate = useMemo((): string => {
     const invalid = Object.keys(DATE_OPTION).find(key => {
-      return DATE_OPTION[key].limit !== date[key].length
+      const regexp = new RegExp(`[0-9０-９]{${DATE_OPTION[key].pattern}}`)
+      return date[key].match(regexp) === null
     })
     if (invalid) return ''
-    return formatDate(date.year + date.month + date.day)
+    return formatDate(date.year + `00${date.month}`.slice(-2) + `00${date.day}`.slice(-2))
   }, [date])
 
   const handleChange = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
       const val = event.target.value.replace(/[^0-9０-９]/g, '')
       const name = event.target.name
-
       console.log('value: ', val)
-
       // 上限突破しようとする場合
       if (DATE_OPTION[name].limit < val.length) return
       // 正常系
@@ -73,6 +67,14 @@ const View: React.FC<Props> = props => {
     [date]
   )
 
+  const handleStart = useCallback(() => {
+    setTime({ ...time, start: new Date().getTime() })
+  }, [time])
+
+  const handleEnd = useCallback(() => {
+    setTime({ ...time, end: new Date().getTime() })
+  }, [time])
+
   return (
     <div className={props.className}>
       <div className="container">
@@ -82,11 +84,12 @@ const View: React.FC<Props> = props => {
           name="year"
           placeholder="1979"
           value={date.year}
-          pattern={`[0-9]{${DATE_OPTION.year.limit}}`}
+          pattern={`[0-9０-９]{${DATE_OPTION.year.pattern}}`}
           maxLength={DATE_OPTION.year.limit}
           ref={DATE_OPTION.year.ref}
           onChange={handleChange}
           onKeyUp={handleKeyUp}
+          onFocus={handleStart}
         />
         <span className="mark">y</span>
         <input
@@ -95,7 +98,7 @@ const View: React.FC<Props> = props => {
           name="month"
           placeholder="01"
           value={date.month}
-          pattern={`[0-9]{${DATE_OPTION.month.limit}}`}
+          pattern={`[0-9０-９]{${DATE_OPTION.month.pattern}}`}
           maxLength={DATE_OPTION.month.limit}
           ref={DATE_OPTION.month.ref}
           onChange={handleChange}
@@ -108,14 +111,16 @@ const View: React.FC<Props> = props => {
           name="day"
           placeholder="01"
           value={date.day}
-          pattern={`[0-9]{${DATE_OPTION.day.limit}}`}
+          pattern={`[0-9０-９]{${DATE_OPTION.day.pattern}}`}
           maxLength={DATE_OPTION.day.limit}
           ref={DATE_OPTION.day.ref}
           onChange={handleChange}
+          onBlur={handleEnd}
         />
         <span className="mark">d</span>
       </div>
       <p>value: {resultDate || 'none'}</p>
+      <p>time: {time.start && time.end ? Math.floor((time.end - time.start) / 1000) : ' --- '}秒</p>
     </div>
   )
 }

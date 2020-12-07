@@ -1,60 +1,43 @@
-import React, { useState, useCallback, useMemo, createRef } from 'react'
+import React, { useState, useCallback, useMemo } from 'react'
 import styled from 'styled-components'
 import { formatDate } from '~/utils/input_date_lab'
-import { T_OPTION, T_DATE } from '~/types/input_date_lab'
 
 type Props = {
   className?: string
-  value: string
 }
 
-const DATE_OPTION: T_OPTION = {
+const DATE_OPTION = {
   year: {
     limit: 4,
-    ref: createRef<HTMLInputElement>(),
-    next: 'month'
+    pattern: '4'
   },
   month: {
     limit: 2,
-    ref: createRef<HTMLInputElement>(),
-    next: 'day'
+    pattern: '1,2'
   },
   day: {
     limit: 2,
-    ref: createRef<HTMLInputElement>(),
-    next: ''
+    pattern: '1,2'
   }
 }
 
 const View: React.FC<Props> = props => {
-  const [time, setTime] = useState({
-    start: 0,
-    end: 0
-  })
-  const [date, updateDate] = useState<T_DATE>(() => {
-    const date = props.value.split('-')
-    return {
-      year: date[0] || '',
-      month: date[1] || '',
-      day: date[2] || ''
-    }
-  })
-
+  const [time, setTime] = useState({ start: 0, end: 0 })
+  const [date, updateDate] = useState({ year: '', month: '', day: '' })
   const resultDate = useMemo((): string => {
     const invalid = Object.keys(DATE_OPTION).find(key => {
-      return DATE_OPTION[key].limit !== date[key].length
+      const regexp = new RegExp(`[0-9]{${DATE_OPTION[key].pattern}}`)
+      return date[key].match(regexp) === null
     })
     if (invalid) return ''
-    return formatDate(date.year + date.month + date.day)
+    return formatDate(date.year + `00${date.month}`.slice(-2) + `00${date.day}`.slice(-2))
   }, [date])
 
   const handleChange = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
-      const val = event.target.value.replace(/[^0-9０-９]/g, '')
+      const val = event.target.value.replace(/[^0-9]/g, '')
       const name = event.target.name
-
       console.log('value: ', val)
-
       // 上限突破しようとする場合
       if (DATE_OPTION[name].limit < val.length) return
       // 正常系
@@ -79,9 +62,8 @@ const View: React.FC<Props> = props => {
           name="year"
           placeholder="1979"
           value={date.year}
-          pattern={`[0-9]{${DATE_OPTION.year.limit}}`}
+          pattern={`[0-9]{${DATE_OPTION.year.pattern}}`}
           maxLength={DATE_OPTION.year.limit}
-          ref={DATE_OPTION.year.ref}
           onChange={handleChange}
           onFocus={handleStart}
         />
@@ -91,9 +73,8 @@ const View: React.FC<Props> = props => {
           name="month"
           placeholder="01"
           value={date.month}
-          pattern={`[0-9]{${DATE_OPTION.month.limit}}`}
+          pattern={`[0-9]{${DATE_OPTION.month.pattern}}`}
           maxLength={DATE_OPTION.month.limit}
-          ref={DATE_OPTION.month.ref}
           onChange={handleChange}
         />
         <span className="mark">m</span>
@@ -102,9 +83,8 @@ const View: React.FC<Props> = props => {
           name="day"
           placeholder="01"
           value={date.day}
-          pattern={`[0-9]{${DATE_OPTION.day.limit}}`}
+          pattern={`[0-9]{${DATE_OPTION.day.pattern}}`}
           maxLength={DATE_OPTION.day.limit}
-          ref={DATE_OPTION.day.ref}
           onChange={handleChange}
           onBlur={handleEnd}
         />

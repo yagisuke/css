@@ -26,13 +26,13 @@ class Page extends Component<Props> {
         <Head title={this.props.title} description={this.props.description} />
         <h1>{this.props.title}</h1>
         <h2>{`input[type="text"]`}</h2>
-        <Sample1 value="" />
+        <Sample1 />
         <h2>{`input[type="number"]`}</h2>
-        <Sample2 value="" />
+        <Sample2 />
         <h2>{`input[type="tel"]`}</h2>
-        <Sample3 value="" />
+        <Sample3 />
         <h2>{`input[type="date"]`}</h2>
-        <Sample4 value="" />
+        <Sample4 />
       </>
     )
   }

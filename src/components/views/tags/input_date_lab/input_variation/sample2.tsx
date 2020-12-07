@@ -3,11 +3,10 @@ import styled from 'styled-components'
 
 type Props = {
   className?: string
-  value: string
 }
 
 const View: React.FC<Props> = props => {
-  const [date, updateDate] = useState(props.value)
+  const [date, updateDate] = useState('')
 
   const handleChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
     updateDate(event.target.value)
@@ -15,13 +14,7 @@ const View: React.FC<Props> = props => {
 
   return (
     <div className={props.className}>
-      <input
-        type="number"
-        name="number"
-        placeholder="1979/01/01"
-        value={date}
-        onChange={handleChange}
-      />
+      <input type="number" name="number" value={date} onChange={handleChange} />
       <p>value: {date || 'none'}</p>
       <ul>
         <li>
