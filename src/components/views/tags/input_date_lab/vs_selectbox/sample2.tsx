@@ -11,6 +11,7 @@ type Props = {
 
 const View: React.FC<Props> = props => {
   const [time, setTime] = useState({ start: 0, end: 0 })
+
   const [date, updateDate] = useState({ year: '', month: '', day: '' })
   const [years] = useState(() => {
     const currentYear = new Date().getFullYear()
