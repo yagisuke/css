@@ -1,14 +1,13 @@
 import React, { useState, useCallback, useMemo, createRef } from 'react'
 import styled from 'styled-components'
 import { formatDate } from '~/utils/input_date_lab'
-import { T_OPTION, T_DATE } from '~/types/input_date_lab'
 
 type Props = {
   className?: string
   value: string
 }
 
-const DATE_OPTION: T_OPTION = {
+const DATE_OPTION = {
   year: {
     limit: 4,
     ref: createRef<HTMLInputElement>(),
@@ -27,7 +26,7 @@ const DATE_OPTION: T_OPTION = {
 }
 
 const View: React.FC<Props> = props => {
-  const [date, updateDate] = useState<T_DATE>(() => {
+  const [date, updateDate] = useState<{ year: string; month: string; day: string }>(() => {
     const date = props.value.split('-')
     return {
       year: date[0] || '',

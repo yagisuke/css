@@ -1,37 +1,36 @@
 import React, { useState, useCallback, useMemo, createRef } from 'react'
 import styled from 'styled-components'
 import { formatDate } from '~/utils/input_date_lab'
-import { T_OPTION, T_DATE } from '~/types/input_date_lab'
 
 type Props = {
   className?: string
   value: string
 }
 
-const DATE_OPTION: T_OPTION = {
+const DATE_OPTION = {
   year: {
     limit: 4,
+    pattern: '4',
     ref: createRef<HTMLInputElement>(),
     next: 'month'
   },
   month: {
     limit: 2,
+    pattern: '1,2',
     ref: createRef<HTMLInputElement>(),
     next: 'day'
   },
   day: {
     limit: 2,
+    pattern: '1,2',
     ref: createRef<HTMLInputElement>(),
     next: ''
   }
 }
 
 const View: React.FC<Props> = props => {
-  const [time, setTime] = useState({
-    start: 0,
-    end: 0
-  })
-  const [date, updateDate] = useState<T_DATE>(() => {
+  const [time, setTime] = useState({ start: 0, end: 0 })
+  const [date, updateDate] = useState<{ year: string; month: string; day: string }>(() => {
     const date = props.value.split('-')
     return {
       year: date[0] || '',
@@ -79,7 +78,7 @@ const View: React.FC<Props> = props => {
           name="year"
           placeholder="1979"
           value={date.year}
-          pattern={`[0-9]{${DATE_OPTION.year.limit}}`}
+          pattern={`[0-9]{${DATE_OPTION.year.pattern}}`}
           maxLength={DATE_OPTION.year.limit}
           ref={DATE_OPTION.year.ref}
           onChange={handleChange}
@@ -91,7 +90,7 @@ const View: React.FC<Props> = props => {
           name="month"
           placeholder="01"
           value={date.month}
-          pattern={`[0-9]{${DATE_OPTION.month.limit}}`}
+          pattern={`[0-9]{${DATE_OPTION.month.pattern}}`}
           maxLength={DATE_OPTION.month.limit}
           ref={DATE_OPTION.month.ref}
           onChange={handleChange}
@@ -102,7 +101,7 @@ const View: React.FC<Props> = props => {
           name="day"
           placeholder="01"
           value={date.day}
-          pattern={`[0-9]{${DATE_OPTION.day.limit}}`}
+          pattern={`[0-9]{${DATE_OPTION.day.pattern}}`}
           maxLength={DATE_OPTION.day.limit}
           ref={DATE_OPTION.day.ref}
           onChange={handleChange}
