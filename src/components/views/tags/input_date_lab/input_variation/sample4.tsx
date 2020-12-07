@@ -3,11 +3,10 @@ import styled from 'styled-components'
 
 type Props = {
   className?: string
-  value: string
 }
 
 const View: React.FC<Props> = props => {
-  const [date, updateDate] = useState(props.value)
+  const [date, updateDate] = useState('')
 
   const handleChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
     updateDate(event.target.value)
