@@ -4,7 +4,6 @@ import { formatDate } from '~/utils/input_date_lab'
 
 type Props = {
   className?: string
-  value: string
 }
 
 const DATE_OPTION = {

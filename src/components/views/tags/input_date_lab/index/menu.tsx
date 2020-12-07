@@ -28,6 +28,11 @@ const View: React.FC<Props> = props => (
       </Link>
     </li>
     <li>
+      <Link href="/tags/input_date_lab/input_mode_variation/" prefetch={false}>
+        <a>Input Mode Variation</a>
+      </Link>
+    </li>
+    <li>
       <Link href="/tags/input_date_lab/input_mode/" prefetch={false}>
         <a>Input Mode</a>
       </Link>
