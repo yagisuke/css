@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useMemo } from 'react'
+import React, { useState, useCallback, useMemo, createRef } from 'react'
 import styled from 'styled-components'
 import { formatDate } from '~/utils/input_date_lab'
 
@@ -9,15 +9,21 @@ type Props = {
 const DATE_OPTION = {
   year: {
     limit: 4,
-    pattern: '4'
+    pattern: '4',
+    ref: createRef<HTMLInputElement>(),
+    next: 'month'
   },
   month: {
     limit: 2,
-    pattern: '1,2'
+    pattern: '1,2',
+    ref: createRef<HTMLInputElement>(),
+    next: 'day'
   },
   day: {
     limit: 2,
-    pattern: '1,2'
+    pattern: '1,2',
+    ref: createRef<HTMLInputElement>(),
+    next: ''
   }
 }
 
@@ -46,6 +52,20 @@ const View: React.FC<Props> = props => {
     [date]
   )
 
+  const handleKeyUp = useCallback(
+    (e: React.KeyboardEvent<HTMLInputElement>) => {
+      const val = e.currentTarget.defaultValue
+      const name = e.currentTarget.name
+      const complete = val.length === DATE_OPTION[name].limit
+      const next = DATE_OPTION[name].next || ''
+      // 次の入力欄に移動
+      if (complete && DATE_OPTION[next] && DATE_OPTION[next].ref.current) {
+        DATE_OPTION[next].ref.current.focus()
+      }
+    },
+    [date]
+  )
+
   const handleStart = useCallback(() => {
     setTime({ ...time, start: new Date().getTime() })
   }, [time])
@@ -65,6 +85,7 @@ const View: React.FC<Props> = props => {
           pattern={`[0-9０-９]{${DATE_OPTION.year.pattern}}`}
           maxLength={DATE_OPTION.year.limit}
           onChange={handleChange}
+          onKeyUp={handleKeyUp}
           onFocus={handleStart}
         />
         <span className="mark">y</span>
@@ -76,6 +97,7 @@ const View: React.FC<Props> = props => {
           pattern={`[0-9０-９]{${DATE_OPTION.month.pattern}}`}
           maxLength={DATE_OPTION.month.limit}
           onChange={handleChange}
+          onKeyUp={handleKeyUp}
         />
         <span className="mark">m</span>
         <input
