@@ -85,6 +85,7 @@ const View: React.FC<Props> = props => {
           value={date.year}
           pattern={`[0-9０-９]{${DATE_OPTION.year.pattern}}`}
           maxLength={DATE_OPTION.year.limit}
+          ref={DATE_OPTION.year.ref}
           onChange={handleChange}
           onKeyUp={handleKeyUp}
           onFocus={handleStart}
@@ -97,6 +98,7 @@ const View: React.FC<Props> = props => {
           value={date.month}
           pattern={`[0-9０-９]{${DATE_OPTION.month.pattern}}`}
           maxLength={DATE_OPTION.month.limit}
+          ref={DATE_OPTION.month.ref}
           onChange={handleChange}
           onKeyUp={handleKeyUp}
         />
@@ -108,6 +110,7 @@ const View: React.FC<Props> = props => {
           value={date.day}
           pattern={`[0-9０-９]{${DATE_OPTION.day.pattern}}`}
           maxLength={DATE_OPTION.day.limit}
+          ref={DATE_OPTION.day.ref}
           onChange={handleChange}
           onBlur={handleEnd}
         />
