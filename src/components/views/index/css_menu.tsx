@@ -37,6 +37,11 @@ const View: React.FC<Props> = props => (
         <a>:is()</a>
       </Link>
     </li>
+    <li>
+      <Link href="/houdini/" prefetch={false}>
+        <a>Houdini</a>
+      </Link>
+    </li>
     {/* 
     <li>
       <Link href="/styles/houdini_properties_and_values_api/" prefetch={false}>

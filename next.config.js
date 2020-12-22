@@ -11,6 +11,12 @@ module.exports = {
   exportPathMap: async () => {
     return {
       '/': { page: '/' },
+      '/houdini': { page: '/houdini' },
+      '/houdini/paint_api': { page: '/houdini/paint_api' },
+      '/houdini/paint_api/non_polyfill': { page: '/houdini/paint_api/non_polyfill' },
+      '/houdini/paint_api/add_polyfill': { page: '/houdini/paint_api/add_polyfill' },
+      '/houdini/paint_api/simple_animation': { page: '/houdini/paint_api/simple_animation' },
+      '/houdini/paint_api/ripple_animation': { page: '/houdini/paint_api/ripple_animation' },
       '/styles/scroll_snap': { page: '/styles/scroll_snap' },
       '/styles/focus_within': { page: '/styles/focus_within' },
       '/styles/prefers_reduced_motion': { page: '/styles/prefers_reduced_motion' },

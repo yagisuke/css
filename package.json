@@ -20,7 +20,10 @@
   },
   "homepage": "https://github.com/yagisuke/css#readme",
   "dependencies": {
+    "css-paint-polyfill": "^2.0.0",
     "date-fns": "^2.9.0",
+    "file-loader": "^6.2.0",
+    "houdini-static-gradient": "^1.1.2",
     "next": "^9.1.7",
     "next-ga": "^2.3.4",
     "react": "^16.12.0",
@@ -40,6 +43,6 @@
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.17.0",
     "prettier": "^1.19.1",
-    "typescript": "^3.7.4"
+    "typescript": "^3.9.7"
   }
 }
