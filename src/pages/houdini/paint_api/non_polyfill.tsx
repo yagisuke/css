@@ -14,6 +14,9 @@ class Page extends Component<Props> {
       description: '$ ls CSS | Houdini > Paint API > Non Polyfill'
     }
   }
+  componentDidMount() {
+    CSS.paintWorklet.addModule('/scripts/houdini_paint_api/static-gradient.js')
+  }
   render() {
     return (
       <>
