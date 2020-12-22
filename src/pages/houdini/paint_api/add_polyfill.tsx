@@ -1,10 +1,7 @@
 import { Component } from 'react'
-import dynamic from 'next/dynamic'
 import Header from 'next/head'
 import Head from '~/components/head'
-const View = dynamic(() => import('~/components/views/houdini/paint_api/add_polyfill'), {
-  ssr: false
-})
+import View from '~/components/views/houdini/paint_api/add_polyfill'
 
 type Props = {
   title: string
