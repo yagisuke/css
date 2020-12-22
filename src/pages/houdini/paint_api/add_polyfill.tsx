@@ -22,18 +22,13 @@ class Page extends Component<Props> {
     return (
       <>
         <Header>
+          <script src="https://unpkg.com/css-paint-polyfill"></script>
           <script
             dangerouslySetInnerHTML={{
               __html: `
               ;(async () => {
-                const needPolyfill = !('paintWorklet' in CSS)
-                if (needPolyfill) {
-                  await import('css-paint-polyfill')
-                }
                 await CSS.paintWorklet.addModule('/scripts/houdini_paint_api/static-gradient.js')
-                if (needPolyfill) {
-                  window.dispatchEvent(new Event('resize'))
-                }
+                window.dispatchEvent(new Event('resize'))
               })()
             `
             }}
