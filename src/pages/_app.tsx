@@ -10,6 +10,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   useEffect(() => {
     const screenlogger = (url: string) => {
+      console.log('screen logger event')
       if (!analytics) return
       setCurrentScreen(analytics, url)
       logEvent(analytics, 'screen_view2')
@@ -25,6 +26,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   useEffect(() => {
     const $anchor = document.querySelector('a') as HTMLAnchorElement
+    console.log('a click event')
     $anchor.addEventListener('click', () => {
       if (analytics) {
         setUserId(analytics, 'yagisuke')
