@@ -19,6 +19,10 @@ const useFirebase = () => {
   useEffect(() => {
     const fb = initializeApp(firebaseConfig)
     const ga = getAnalytics(fb)
+
+    console.log('fbbbbb', fb)
+    console.log('fbbbbb2', ga)
+
     setFirebase(fb)
     setAnalytics(ga)
   }, [])
