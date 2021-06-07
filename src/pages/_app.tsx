@@ -11,9 +11,10 @@ function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     const screenlogger = (url: string) => {
       console.log('screen logger event')
-      if (!analytics) return
-      setCurrentScreen(analytics, url)
-      logEvent(analytics, 'screen_view2')
+      if (analytics) {
+        setCurrentScreen(analytics, url)
+        logEvent(analytics, 'screen_view2')
+      }
     }
     router.events.on('routeChangeComplete', screenlogger)
     //For First Page
@@ -25,16 +26,22 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, [])
 
   useEffect(() => {
-    const $anchor = document.querySelector('a') as HTMLAnchorElement
-    console.log('a click event')
-    $anchor.addEventListener('click', () => {
+    console.log('click event')
+    window.addEventListener('click', () => {
+      console.log('click event 2')
       if (analytics) {
+        console.log('click event 3')
         setUserId(analytics, 'yagisuke')
         setUserProperties(analytics, {
           gender: 'male',
           todofuken: 'kanagawa',
           age: 32
         })
+        logEvent(analytics, 'click_event2', {
+          eventTargetId: 'hoge',
+          water: 1000
+        })
+        console.log('click event 4')
       }
     })
   }, [])
