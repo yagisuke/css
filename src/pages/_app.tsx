@@ -11,6 +11,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     const screenlogger = (url: string) => {
       console.warn('screen logger event')
+      console.log('ssssssssssssssssss', analytics)
       if (analytics) {
         setCurrentScreen(analytics, url)
         logEvent(analytics, 'screen_view2')
@@ -23,11 +24,13 @@ function MyApp({ Component, pageProps }: AppProps) {
     return () => {
       router.events.off('routeChangeComplete', screenlogger)
     }
-  }, [])
+  }, [analytics])
 
   useEffect(() => {
     console.warn('click event')
     window.addEventListener('click', () => {
+      console.log('ddddddddddddddd', analytics)
+
       console.warn('click event 2')
       if (analytics) {
         console.warn('click event 3')
@@ -44,7 +47,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         console.warn('click event 4')
       }
     })
-  }, [])
+  }, [analytics])
 
   return <Component {...pageProps} />
 }
