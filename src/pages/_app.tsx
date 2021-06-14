@@ -1,53 +1,50 @@
+import qs from 'querystring'
 import { useEffect } from 'react'
 import { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
-import useFirebase from '~/utils/hooks/use-firebase'
-import { logEvent, setCurrentScreen, setUserId, setUserProperties } from 'firebase/analytics'
+import { firebase } from '~/utils/firebaseClient'
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const { analytics } = useFirebase()
   const router = useRouter()
 
+  console.log(router.pathname)
+
   useEffect(() => {
-    const screenlogger = (url: string) => {
-      console.warn('screen logger event')
-      console.log('ssssssssssssssssss', analytics)
-      if (analytics) {
-        setCurrentScreen(analytics, url)
-        logEvent(analytics, 'screen_view2')
-      }
+    const screenLogger = (url: string) => {
+      const query = { ref: 'hogehoge', condition: 'hogehoge' }
+
+      firebase.analytics().logEvent('screen_logger', {
+        current_url: url,
+        page: 1,
+        id: 1,
+        query: JSON.stringify(query)
+      })
     }
-    router.events.on('routeChangeComplete', screenlogger)
+    
+    router.events.on('routeChangeComplete', screenLogger)
     //For First Page
-    screenlogger(router.pathname)
+    screenLogger(router.pathname)
+
     //Remvove Event Listener after un-mount
     return () => {
-      router.events.off('routeChangeComplete', screenlogger)
+      router.events.off('routeChangeComplete', screenLogger)
     }
-  }, [analytics])
+  }, [])
 
   useEffect(() => {
-    console.warn('click event')
     window.addEventListener('click', () => {
-      console.log('ddddddddddddddd', analytics)
-
-      console.warn('click event 2')
-      if (analytics) {
-        console.warn('click event 3')
-        setUserId(analytics, 'yagisuke')
-        setUserProperties(analytics, {
-          gender: 'male',
-          todofuken: 'kanagawa',
-          age: 32
-        })
-        logEvent(analytics, 'click_event2', {
-          eventTargetId: 'hoge',
-          water: 1000
-        })
-        console.warn('click event 4')
-      }
+      firebase.analytics().setUserId('yagisukev2')
+      firebase.analytics().setUserProperties({
+        gender: 'male',
+        todofuken: 'kanagawa',
+        age: 32
+      })
+      firebase.analytics().logEvent('clicking_event', {
+        eventTargetId: 'hoge',
+        water: 1000
+      })
     })
-  }, [analytics])
+  }, [])
 
   return <Component {...pageProps} />
 }
